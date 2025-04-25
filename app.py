@@ -7,13 +7,13 @@ st.markdown("### Convert between different units of measurement.")
 st.write("Welcome! select a category, enter avalue and get the converted result in real-time")
 # Add input fields and conversion functions
 
-category = st.selectbox(" Chose a Category",["Lenght", "Weight", "Time"])
+category = st.selectbox(" Chose a Category",["Length", "Weight", "Time"])
 def convert_units(category, value, unit):
-    if category == "Lenght":
+    if category == "Length":
         if unit == "Kilometers to Miles":
             return value * 0.621371
         elif unit == "Miles to Kilometers":
-            return value * 0.621371          
+            return value / 0.621371          
     elif category == "Weight":
         if unit == "Kilograms to Pounds":
             return value * 2.20462
@@ -35,11 +35,11 @@ def convert_units(category, value, unit):
     return 0
     
 if category == "Lenght":
-    unit = st.selectbox("📏Select Conversation", ["Miles to Kilometers","Kilometers to Miles"])
+    unit = st.selectbox("📏Select Conversion", ["Miles to Kilometers","Kilometers to Miles"])
 elif category == "Weight":
-    unit = st.selectbox("⚖Select Conversation", ["Pounds to Kilograms","Kilograms to Pounds"])
+    unit = st.selectbox("⚖Select Conversion", ["Pounds to Kilograms","Kilograms to Pounds"])
 elif category == "Time":
-    unit = st.selectbox("⏰Select Conversation", ["Seconds to Minutes","Minutes to Seconds","Minutes to Hours","Hours to Minutes","Hours to Days","Days to Hours"])
+    unit = st.selectbox("⏰Select Conversion", ["Seconds to Minutes","Minutes to Seconds","Minutes to Hours","Hours to Minutes","Hours to Days","Days to Hours"])
 
 value = st.number_input("Enter value")
 
